@@ -59,4 +59,16 @@ for i in data
 
         try
             element = parse(Int64, element)
-            push
+            push!(temp, element)
+        catch
+
+        end
+
+    end
+
+    num = first(temp) * 10 + last(temp)
+    global sum = sum + num
+
+end
+
+println(sum)

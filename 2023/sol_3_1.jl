@@ -54,10 +54,6 @@ for i in data_1
     push!(position_array, position_vec)
 end 
 
-# println(position_array[1])
-println(num_array[46])
-
-
 for (index_i, value_i) in enumerate(position_array)
 
     if index_i == 1
@@ -73,7 +69,6 @@ for (index_i, value_i) in enumerate(position_array)
             
                     if string(data[index_i][end_index]) != "." || string(data[index_i+1][end_index]) != "." || !(all(x -> x == '.', string(data[index_i+1][value_j]))) # !(all(ispunct, string(data[index_i+1][value_j])))
                         
-                        # println(num_array[index_i][index_j])
                         global sum = sum + num_array[index_i][index_j]
         
                     end
