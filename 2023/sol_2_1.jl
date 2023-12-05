@@ -47,8 +47,6 @@ for i in data
             trial_blue = 0
         end
 
-        # println(trial_red, "-", trial_green, "-", trial_blue)
-
         if trial_red > red_cubes || trial_green > green_cubes || trial_blue > blue_cubes
             value = 1
         end 
