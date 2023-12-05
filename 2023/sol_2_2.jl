@@ -28,31 +28,41 @@ for i in data
     for j in 1:num_games
         
         try
+
             index_red = findfirst(dictionary[1], i_split[j])[1] - 2
             trial_red = parse(Int64, string(i_split[j][(index_red-1):index_red]))
+            
         catch
+
             trial_red = 0
+
         end 
 
         try
+
             index_green = findfirst(dictionary[2], i_split[j])[1] - 2
             trial_green = parse(Int64, string(i_split[j][(index_green-1):index_green]))
+            
         catch
+
             trial_green = 0
+
         end
 
         try
+
             index_blue = findfirst(dictionary[3], i_split[j])[1] - 2
             trial_blue = parse(Int64, string(i_split[j][(index_blue-1):index_blue]))
+
         catch
+
             trial_blue = 0
+
         end
 
         push!(reds, trial_red)
         push!(greens, trial_green)
         push!(blues, trial_blue)
-
-        # println(trial_red, "-", trial_green, "-", trial_blue)
 
     end
 
