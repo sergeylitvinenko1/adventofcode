@@ -9,6 +9,7 @@ end
 sum = 0
 
 for value in data
+    
     b = findfirst(x -> x == ':', value) + 2
     row = value[b:end]
     row_split = split(row, "|")

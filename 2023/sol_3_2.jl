@@ -249,4 +249,391 @@ for (index_i, value_i) in enumerate(position_array)
 
                         temp = num_array[index_i][index_j]
                         
-                        push!(n
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, end_index])
+
+                    elseif string(data[index_i+1][end_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i+1, end_index])
+
+                    elseif any(x -> x == '*', string(data[index_i+1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i+1, value_j])
+
+                        push!(position_array_triggers, [index_i+1, value_j[findfirst(x -> x == '*', data[index_i+1][value_j])]])
+
+                    elseif any(x -> x == '*', string(data[index_i-1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i-1, value_j])
+
+                        push!(position_array_triggers, [index_i-1, value_j[findfirst(x -> x == '*', data[index_i-1][value_j])]])
+        
+                    end 
+        
+                catch
+        
+                end
+
+            elseif end_index > length(data[index_i])
+
+                try
+
+                    if string(data[index_i][begin_index]) == "*"
+        
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i, begin_index])
+
+                    elseif string(data[index_i-1][begin_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, begin_index])
+
+                    elseif string(data[index_i+1][begin_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i+1, begin_index])
+
+                    elseif any(x -> x == '*', string(data[index_i+1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i+1, value_j])
+
+                        push!(position_array_triggers, [index_i+1, value_j[findfirst(x -> x == '*', data[index_i+1][value_j])]])
+
+                    elseif any(x -> x == '*', string(data[index_i-1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i-1, value_j])
+
+                        push!(position_array_triggers, [index_i-1, value_j[findfirst(x -> x == '*', data[index_i-1][value_j])]])
+        
+                    end 
+        
+                catch
+        
+                end
+
+            else
+
+                try
+
+                    if string(data[index_i][begin_index]) == "*"
+        
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i, begin_index])
+
+                    elseif string(data[index_i][end_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i, end_index])
+
+                    elseif string(data[index_i-1][begin_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, begin_index])
+
+                    elseif string(data[index_i+1][begin_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i+1, begin_index])
+
+                    elseif string(data[index_i-1][end_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, end_index])
+                    
+                    elseif string(data[index_i+1][end_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i+1, end_index])
+
+                    elseif any(x -> x == '*', string(data[index_i+1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i+1, value_j])
+
+                        push!(position_array_triggers, [index_i+1, value_j[findfirst(x -> x == '*', data[index_i+1][value_j])]])
+
+                    elseif any(x -> x == '*', string(data[index_i-1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i-1, value_j])
+
+                        push!(position_array_triggers, [index_i-1, value_j[findfirst(x -> x == '*', data[index_i-1][value_j])]])
+        
+                    end 
+        
+                catch
+        
+                end
+
+            end
+
+        end
+
+    else 
+
+        for (index_j, value_j)  in enumerate(value_i)
+
+            begin_index = first(value_j) - 1
+            end_index = last(value_j) + 1
+
+            if begin_index == 0
+
+                try
+            
+                    if string(data[index_i][end_index]) == "*"
+        
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i, end_index])
+
+                    elseif string(data[index_i-1][end_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, end_index])
+
+                    elseif any(x -> x == '*', string(data[index_i-1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i-1, value_j])
+
+                        push!(position_array_triggers, [index_i-1, value_j[findfirst(x -> x == '*', data[index_i-1][value_j])]])
+        
+                    end 
+                        
+                catch
+        
+                end
+
+
+            elseif end_index > length(data[index_i])
+
+                try
+            
+                    if string(data[index_i][begin_index]) == "*"
+        
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i, begin_index])
+
+                    elseif string(data[index_i-1][begin_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, begin_index])
+
+                    elseif any(x -> x == '*', string(data[index_i-1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i-1, value_j])
+
+                        push!(position_array_triggers, [index_i-1, value_j[findfirst(x -> x == '*', data[index_i-1][value_j])]])
+        
+                    end 
+                        
+                catch
+        
+                end
+
+
+            else
+
+                try
+            
+                    if string(data[index_i][begin_index]) == "*"
+        
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i, begin_index])
+
+                    elseif string(data[index_i][end_index]) == "*"
+                        
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i, end_index])
+
+                    elseif string(data[index_i-1][begin_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, begin_index])
+
+                    elseif string(data[index_i-1][end_index]) == "*"
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        push!(position_array_triggers, [index_i-1, end_index])
+
+                    elseif any(x -> x == '*', string(data[index_i-1][value_j]))
+
+                        temp = num_array[index_i][index_j]
+                        
+                        push!(num_array_ast, temp)
+
+                        push!(position_array_ast, [index_i, index_j])
+
+                        # push!(position_array_triggers, [index_i-1, value_j])
+                        
+                        push!(position_array_triggers, [index_i-1, value_j[findfirst(x -> x == '*', data[index_i-1][value_j])]])
+        
+                    end 
+                        
+                catch
+        
+                end
+           
+            end
+
+        end
+
+    end
+
+end
+
+for (index, value) in enumerate(position_array_triggers)
+    
+    try 
+
+        temp = findnext(x -> x == value, position_array_triggers, index+1)
+
+        mult = num_array_ast[index] * num_array_ast[temp]
+
+        global sum = sum + mult
+
+    catch
+
+    end 
+
+end
+
+println("The answer is ", sum)
