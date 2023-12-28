@@ -1,3 +1,3 @@
-2023 - Julia 
-2022 - Python
+2023 - Julia //
+2022 - Python //
 2021 - R
